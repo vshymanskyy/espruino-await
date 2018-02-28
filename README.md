@@ -16,12 +16,14 @@ npm run build
 # Bundle in production mode (minified)
 npm run build --production
 
+# Open device console
+npm run console
 ```
 
 **Note:** this currently uses a Makefile, so can have trouble uploading to the board on Windows. This can be easily tweaked.
 
 ## Related issues
 
-https://github.com/espruino/Espruino/issues/948
-https://github.com/espruino/Espruino/issues/1272
-https://github.com/espruino/Espruino/issues/1302
+- [ ] [async/await support](https://github.com/espruino/Espruino/issues/1272)
+- [ ] [ES5/ES6 wishlist](https://github.com/espruino/Espruino/issues/1302)
+- [ ] [Maximum number of scopes exceeded](https://github.com/espruino/Espruino/issues/948)
