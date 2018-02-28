@@ -2,7 +2,7 @@
 
 This uses `rollup`, `babel` and `fast-async` to show how async/await can be used with `Espruino`.
 
-Verified with **Puck.js**, **Espruino Pico 1.3**, **ESP32**.
+Verified with **Puck.js**, **Espruino Pico 1.3**, **ESP32**, Espruino v1.96
 
 ## Howto
 
