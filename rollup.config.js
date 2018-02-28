@@ -1,13 +1,15 @@
 import babel from 'rollup-plugin-babel'
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
 import replace from 'rollup-plugin-replace'
 import eslint from 'rollup-plugin-eslint'
 import uglify from 'rollup-plugin-uglify'
 import filesize from 'rollup-plugin-filesize'
 import sizes from 'rollup-plugin-sizes'
 
-const REGEN = false;
+// Uncomment this to use regenerator-runtime
+// This chrashes Espruino for some reason...
+const USE_REGEN = false;
 
 let uglify_opts = {
   compress: {
@@ -39,8 +41,8 @@ export default {
     format: 'es',
   },
   plugins: [
-    REGEN && replace({
-      "//import 'regenerator-runtime'" : "import 'regenerator-runtime'",
+    USE_REGEN && replace({
+      "//USE_REGEN:": "",        // Uncomment dynamically for regenerator-runtime import
       delimiters: ['', '']
     }),
     resolve({
@@ -59,7 +61,7 @@ export default {
         [ 'es2015', { modules: false } ],
       ],
       plugins: [
-        REGEN ? 'transform-regenerator' : 'fast-async',
+        USE_REGEN ? 'transform-regenerator' : 'fast-async',
         'external-helpers'
       ]
     }),

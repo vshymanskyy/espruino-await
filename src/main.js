@@ -1,6 +1,6 @@
 'use strict';
 
-//import 'regenerator-runtime'
+//USE_REGEN:import 'regenerator-runtime'
 import config from './config';
 import {log, timeout} from './utils';
 
