@@ -1,6 +1,6 @@
 # espruino-await
 
-This uses rollup, babel and fast-async to show how async/await can be used with Espruino
+This uses `rollup`, `babel` and `fast-async` to show how async/await can be used with `Espruino`
 
 ## Howto
 
@@ -9,7 +9,11 @@ npm install
 
 # Bundle the source code and upload it to the board
 npm start --production
+```
+![Preview](/docs/demo.png)
 
+Some other commands:
+```
 # Bundle in development mode
 npm run build
 
