@@ -62,7 +62,7 @@ export default {
       ],
       plugins: [
         USE_REGEN ? 'transform-regenerator' : 'fast-async',
-        'external-helpers'
+        //'external-helpers'
       ]
     }),
     replace({
