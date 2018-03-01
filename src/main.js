@@ -5,9 +5,11 @@ import config from './config';
 import {log, timeout} from './utils';
 
 async function init() {
-  await test_seq();
-  await test_loop();
-  await test_throw();
+  await test_seq()
+  await test_loop()
+  await test_throw()
+  await test_recursive()
+  log('All tests finished')
   //log(process.memory())
 }
 
@@ -20,7 +22,7 @@ async function test_seq() {
 async function test_loop() {
   log('test loop');
   for (let i=1; i<=10; i++) {
-    log(`${i}`);
+    log(i);
     await timeout(config.delay);
   }
 }
@@ -38,9 +40,19 @@ async function test_throw() {
     await do_throw();
     log('Error2');
   } catch(e) {
-    log(`Test: ${e}`);
+    log('Catched');
   }
-  await timeout(1000);
+  await timeout(500);
+}
+
+async function test_recursive() {
+  log('test recursive');
+  await test_rec(5);
+}
+
+async function test_rec(n) {
+  if (n < 0) return;
+  await test_rec(--n);
 }
 
 if (ENV === 'production') {
