@@ -39,7 +39,7 @@ module.exports = {
             { "commentPattern": "^skip\\sdefault" }
         ],
         "indent": [
-            "error",
+            "warn",
             2
         ],
         "linebreak-style": [
